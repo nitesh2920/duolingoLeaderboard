@@ -36,7 +36,7 @@ export default function EmojiPanel({ selectedEmoji, setSelectedEmoji }: EmojiPan
       {/* Set Your Status Box */}
       <Box
         sx={{
-          p: 3,
+          p: { xs: 3, lg: 2, xl: 3 },
           bgcolor: "transparent",
           borderRadius: 4,
           border: "2px solid #37464F",
@@ -103,25 +103,27 @@ export default function EmojiPanel({ selectedEmoji, setSelectedEmoji }: EmojiPan
         </Box>
         
         {/* Emoji Grid */}
-        <Box sx={{ display: "grid", gridTemplateColumns: "repeat(6, 1fr)", gap: 1 }}>
+        <Box sx={{ display: "grid", gridTemplateColumns: "repeat(6, minmax(0, 1fr))", gap: { xs: 1, md: 0.5, lg: 1 }, width: "100%" }}>
           {EMOJIS.map((emoji) => (
             <Box
               key={emoji}
               onClick={() => setSelectedEmoji(emoji)}
               sx={{
+                width: "100%",
                 aspectRatio: "1/1",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                fontSize: "1.5rem",
+                fontSize: { xs: "1.5rem", md: "1.2rem", lg: "1.5rem" },
                 bgcolor: "transparent",
-                borderRadius: 3,
+                borderRadius: 2,
                 cursor: "pointer",
                 border: selectedEmoji === emoji ? "2px solid #1CB0F6" : "2px solid #37464F",
                 "&:hover": {
                   bgcolor: "rgba(255,255,255,0.05)",
                 },
                 transition: "all 0.1s ease",
+                overflow: "hidden", // prevents inner text from expanding box
               }}
             >
               {emoji}
