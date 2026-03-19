@@ -41,7 +41,7 @@ examduo/
 │       ├── LeaderboardMain.tsx            # The main list container and Empty State
 │       └── Sidebar.tsx                    # Left-side navigation menu placeholder
 ├── data/
-│   └── mockUsers.ts                       # Static mock user data (10 Indian users)
+│   └── mockUsers.ts                       # Static mock user data
 ├── types/
 │   └── leaderboard.ts                     # TypeScript interfaces (User interface)
 └── README.md                              # This documentation file
