@@ -6,7 +6,7 @@ A highly responsive, perfectly polished frontend clone of the Duolingo Leaderboa
 
 1. **Clone the repository:**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/nitesh2920/duolingoLeaderboard.git
    cd examduo
    ```
    
