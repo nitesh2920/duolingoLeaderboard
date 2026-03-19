@@ -59,9 +59,10 @@ export default function EmojiPanel({ selectedEmoji, setSelectedEmoji }: EmojiPan
         {/* Centered Avatar Area */}
         <Box sx={{ display: "flex", justifyContent: "center", mb: 4, position: "relative", width: "fit-content", mx: "auto" }}>
           <Avatar 
-            src="https://i.pravatar.cc/150?u=a042581f4e29026024d" // Current user avatar
-            sx={{ width: 80, height: 80, bgcolor: "grey.700" }} 
-          />
+            sx={{ width: 80, height: 80, bgcolor: "primary.dark", fontSize: "2rem", fontWeight: "bold" }} 
+          >
+            NT
+          </Avatar>
           
           {/* Status Bubble */}
           <Box

@@ -56,9 +56,11 @@ export default function LeaderboardItem({ user, rank, isCurrentUser, selectedEmo
         <Box sx={{ position: "relative" }}>
           <Avatar 
             src={user.avatarUrl} 
-            sx={{ width: 48, height: 48, bgcolor: "grey.700" }} 
+            sx={{ width: 48, height: 48, bgcolor: "grey.700", fontWeight: "bold" }} 
             alt={user.username} 
-          />
+          >
+            {user.username.split(" ").map(n => n[0]).join("").substring(0, 2).toUpperCase()}
+          </Avatar>
           {selectedEmoji && isCurrentUser && (
             <Box
               sx={{
