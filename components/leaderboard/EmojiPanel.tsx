@@ -147,8 +147,8 @@ export default function EmojiPanel({ selectedEmoji, setSelectedEmoji }: EmojiPan
         </Box>
       </Box>
 
-      {/* Footer Links */}
-      <Box sx={{ mt: 4, px: 2, display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 2 }}>
+      {/* Footer Links (Hidden on Mobile, moved to bottom of page) */}
+      <Box sx={{ mt: 4, px: 2, display: { xs: "none", md: "flex" }, flexWrap: "wrap", justifyContent: "center", gap: 2 }}>
         {["ABOUT", "BLOG", "STORE", "EFFICACY", "CAREERS", "INVESTORS", "TERMS", "PRIVACY"].map((link) => (
           <Link
             key={link}

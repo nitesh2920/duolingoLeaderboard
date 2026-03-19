@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Box, Drawer, IconButton, Typography, Grid } from "@mui/material";
+import { Box, Drawer, IconButton, Typography, Grid, Link } from "@mui/material";
 import { ThemeProvider, createTheme, CssBaseline } from "@mui/material";
 import Sidebar from "@/components/leaderboard/Sidebar";
 import LeaderboardMain from "@/components/leaderboard/LeaderboardMain";
@@ -101,7 +101,7 @@ export default function LeaderboardPage() {
           </Grid>
 
           {/* Main Content */}
-          <Grid size={{ xs: 12, md: 8, lg: 6.5 }}>
+          <Grid size={{ xs: 12, md: 8, lg: 6.5 }} sx={{ order: { xs: 2, md: 1 } }}>
             <LeaderboardMain selectedEmoji={selectedEmoji} />
           </Grid>
 
@@ -109,6 +109,7 @@ export default function LeaderboardPage() {
           <Grid
             size={{ xs: 12, md: 4, lg: 3 }}
             sx={{
+              order: { xs: 1, md: 2 },
               position: { md: "sticky" },
               top: 0,
               height: { md: "100vh" },
@@ -118,6 +119,25 @@ export default function LeaderboardPage() {
             <EmojiPanel selectedEmoji={selectedEmoji} setSelectedEmoji={setSelectedEmoji} />
           </Grid>
         </Grid>
+
+        {/* Mobile-only Footer Links (Appears at the very bottom on mobile screens) */}
+        <Box sx={{ pb: 6, pt: 2, px: 2, display: { xs: "flex", md: "none" }, flexWrap: "wrap", justifyContent: "center", gap: 2 }}>
+          {["ABOUT", "BLOG", "STORE", "EFFICACY", "CAREERS", "INVESTORS", "TERMS", "PRIVACY"].map((link) => (
+            <Link
+              key={link}
+              href="#"
+              underline="none"
+              sx={{
+                color: "text.secondary",
+                fontSize: "0.7rem",
+                fontWeight: "bold",
+                "&:hover": { color: "text.primary" },
+              }}
+            >
+              {link}
+            </Link>
+          ))}
+        </Box>
       </Box>
     </ThemeProvider>
   );
