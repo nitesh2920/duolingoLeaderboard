@@ -117,8 +117,8 @@ export default function LeaderboardMain({ selectedEmoji }: LeaderboardMainProps)
         ) : (
           <Box sx={{ display: "flex", flexDirection: "column", gap: 1, mt: 4 }}>
             {mockUsers.map((user, index) => {
-              // Mock rank starting at 8 like in the picture
-              const rank = index + 8;
+              // Rank starting at 1
+              const rank = index + 1;
               const isCurrentUser = user.id === currentUserId;
               
               // Only top 3 logic (for styling) is normally based on rank 1, 2, 3 but here rank starts at 8
