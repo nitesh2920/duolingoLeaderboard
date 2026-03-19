@@ -55,7 +55,7 @@ The React component tree emphasizes **separation of concerns** and **lifted stat
 
 ### 1. `LeaderboardPage` (`app/leaderboard/page.tsx`)
 - **Role:** The Orchestrator / Shell. 
-- **What it does:** Uses MUI's `Grid` to handle the heavy lifting for responsiveness (shifting from a 3-column view on Desktop, to 2-columns on Tablet, and a vertical stack on Mobile). It stores the globally needed `selectedEmoji` state. On Mobile, it intercepts the Sidebar to render inside a sliding `Drawer` hidden behind a Hamburger button.
+- **What it does:** Uses MUI's `Grid` to handle the heavy lifting for responsiveness (shifting from a 3-column view on Desktop, to 2-columns on Tablet, and a vertical stack on Mobile). It stores the globally needed `selectedEmoji` state. On mobile, it intercepts the sidebar to render inside a sliding `Drawer` hidden behind a hamburger sidebar button.
 
 ### 2. `LeaderboardMain`
 - **Role:** The core content area.
