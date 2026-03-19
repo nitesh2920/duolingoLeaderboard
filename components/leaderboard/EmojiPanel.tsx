@@ -103,19 +103,32 @@ export default function EmojiPanel({ selectedEmoji, setSelectedEmoji }: EmojiPan
           />
         </Box>
         
-        {/* Emoji Grid */}
-        <Box sx={{ display: "grid", gridTemplateColumns: "repeat(6, minmax(0, 1fr))", gap: { xs: 1, md: 0.5, lg: 1 }, width: "100%" }}>
+        {/* Emoji Grid / Horizontal Scroll on Mobile */}
+        <Box 
+          sx={{ 
+            display: { xs: "flex", md: "grid" }, 
+            gridTemplateColumns: "repeat(6, minmax(0, 1fr))", 
+            gap: { xs: 2, md: 0.5, lg: 1 }, 
+            width: "100%",
+            overflowX: { xs: "auto", md: "hidden" },
+            pb: { xs: 2, md: 0 },
+            "&::-webkit-scrollbar": { display: "none" }, // Optional: hide scrollbar for clean look
+            msOverflowStyle: "none", // IE
+            scrollbarWidth: "none", // Firefox
+          }}
+        >
           {EMOJIS.map((emoji) => (
             <Box
               key={emoji}
               onClick={() => setSelectedEmoji(emoji)}
               sx={{
-                width: "100%",
+                width: { xs: 56, md: "100%" },
+                minWidth: { xs: 56, md: "auto" },
                 aspectRatio: "1/1",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                fontSize: { xs: "1.5rem", md: "1.2rem", lg: "1.5rem" },
+                fontSize: { xs: "1.8rem", md: "1.2rem", lg: "1.5rem" },
                 bgcolor: "transparent",
                 borderRadius: 2,
                 cursor: "pointer",
@@ -123,8 +136,9 @@ export default function EmojiPanel({ selectedEmoji, setSelectedEmoji }: EmojiPan
                 "&:hover": {
                   bgcolor: "rgba(255,255,255,0.05)",
                 },
+                flexShrink: 0, // critical for horizontal scrolling items
                 transition: "all 0.1s ease",
-                overflow: "hidden", // prevents inner text from expanding box
+                overflow: "hidden",
               }}
             >
               {emoji}
