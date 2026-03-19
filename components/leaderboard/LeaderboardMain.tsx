@@ -10,10 +10,8 @@ interface LeaderboardMainProps {
 }
 
 export default function LeaderboardMain({ selectedEmoji }: LeaderboardMainProps) {
-  // Mock state: change to true to see the populated leaderboard in Phase 3
   const [hasStartedLesson, setHasStartedLesson] = useState(false);
 
-  // Helper to render the shield shaped badge
   const renderBadge = (color: string, size: number, isActive: boolean, isLocked: boolean) => (
     <Box
       sx={{
@@ -31,7 +29,7 @@ export default function LeaderboardMain({ selectedEmoji }: LeaderboardMainProps)
       }}
     >
       {isActive && (
-        <span style={{ fontSize: "1.5rem" }}>🪶</span> // Mock feather
+        <span style={{ fontSize: "1.5rem" }}>🪶</span>
       )}
       {isLocked && (
         <span style={{ fontSize: "1.2rem", opacity: 0.5 }}>🔒</span>
@@ -42,13 +40,12 @@ export default function LeaderboardMain({ selectedEmoji }: LeaderboardMainProps)
   return (
     <Box sx={{ width: "100%", pt: { xs: 2, md: 0 }, px: { xs: 2, md: 4 }, maxWidth: 640, mx: "auto" }}>
       
-      {/* League Badges */}
       <Box sx={{ display: "flex", justifyContent: "center", alignItems: "flex-end", gap: 2, mb: 4, height: 80 }}>
-        {renderBadge("#B98053", 48, false, false)} {/* Bronze */}
-        {renderBadge("#C4D4D8", 48, false, false)} {/* Silver */}
-        {renderBadge("#FFD13B", 64, true, false)}  {/* Gold (Active) */}
-        {renderBadge("#37464F", 48, false, true)}  {/* Locked */}
-        {renderBadge("#37464F", 48, false, true)}  {/* Locked */}
+        {renderBadge("#B98053", 48, false, false)}
+        {renderBadge("#C4D4D8", 48, false, false)}
+        {renderBadge("#FFD13B", 64, true, false)}
+        {renderBadge("#37464F", 48, false, true)}
+        {renderBadge("#37464F", 48, false, true)}
       </Box>
 
       <Box textAlign="center" mb={4}>
@@ -94,7 +91,6 @@ export default function LeaderboardMain({ selectedEmoji }: LeaderboardMainProps)
         )}
       </Box>
 
-      {/* Leaderboard list area */}
       <Box
         sx={{
           p: 0,
@@ -117,13 +113,9 @@ export default function LeaderboardMain({ selectedEmoji }: LeaderboardMainProps)
         ) : (
           <Box sx={{ display: "flex", flexDirection: "column", gap: 1, mt: 4 }}>
             {mockUsers.map((user, index) => {
-              // Rank starting at 1
               const rank = index + 1;
               const isCurrentUser = user.id === currentUserId;
               
-              // Only top 3 logic (for styling) is normally based on rank 1, 2, 3 but here rank starts at 8
-              // Just to fulfill requirements, if rank was 1/2/3 the LeaderboardItem handles it.
-
               return (
                 <LeaderboardItem
                   key={user.id}

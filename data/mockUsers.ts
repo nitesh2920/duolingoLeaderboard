@@ -12,5 +12,5 @@ export const mockUsers: User[] = [
   { id: "user-11", username: "Neha Gupta", xp: 512 },
   { id: "user-12", username: "Karan Desai", xp: 450, avatarUrl: "https://i.pravatar.cc/150?u=a042581f4e29026704d" },
   { id: "user-13", username: "Anjali Reddy", xp: 320 },
-  { id: "user-1", username: "Nitesh Tiwari", xp: 215 }, // current user at rank 10
+  { id: "user-1", username: "Nitesh Tiwari", xp: 215 },
 ];

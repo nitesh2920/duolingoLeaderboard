@@ -18,7 +18,6 @@ export default function Sidebar() {
       <Typography variant="h6" color="primary" fontWeight="bold">
         duolingo
       </Typography>
-      {/* Placeholder navigation items */}
       {["LEARN", "PRACTICE", "LEADERBOARDS", "QUESTS", "SHOP", "PROFILE", "MORE"].map((item) => (
         <Typography
           key={item}

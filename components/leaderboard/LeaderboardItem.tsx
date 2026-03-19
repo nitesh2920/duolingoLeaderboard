@@ -5,16 +5,15 @@ interface LeaderboardItemProps {
   user: User;
   rank: number;
   isCurrentUser: boolean;
-  selectedEmoji?: string; // Phase 4 feature
+  selectedEmoji?: string;
 }
 
 export default function LeaderboardItem({ user, rank, isCurrentUser, selectedEmoji }: LeaderboardItemProps) {
-  // Rank colors
   const getRankColor = (r: number) => {
-    if (r === 1) return "#FFD13B"; // Gold
-    if (r === 2) return "#C4D4D8"; // Silver
-    if (r === 3) return "#B98053"; // Bronze
-    return "text.secondary"; // Default
+    if (r === 1) return "#FFD13B";
+    if (r === 2) return "#C4D4D8";
+    if (r === 3) return "#B98053";
+    return "text.secondary";
   };
 
   const getRankStyle = (r: number) => {
